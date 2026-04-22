@@ -12,7 +12,7 @@
             <a href=".">
                 <h1 class="font-bold text-2xl">cyber</h1>
             </a>
-            <form action="" class="hidden md:block w-full">
+            <form action="" class="hidden md:block w-[50%]">
                 <input type="text" placeholder="Search" class="bg-gray-100 p-2 rounded w-full">
             </form>
             <nav class="hidden lg:block">
@@ -57,14 +57,11 @@
             </div>
         </section>
 
-       <section class="grid grid-cols-1 xl:grid-cols-2">
-    <!-- ЛЕВАЯ КОЛОНКА (PS5 сверху, наушники и очки снизу) -->
+    <section class="grid grid-cols-1 xl:grid-cols-2">
     <div class="flex flex-col">
-        <!-- PlayStation: растягивается на всю ширину -->
         <div class="flex flex-col md:flex-row items-center bg-white overflow-hidden min-h-[320px]">
             <div class="w-full md:w-1/2 flex justify-center">
-                <!-- Контейнер для картинки, чтобы не ломала масштаб -->
-                <img src="img/PlayStation.png" alt="" class="w-full h-auto object-contain scale-125">
+                <img src="img/PlayStation.png" alt="" class="w-full h-auto object-contain -ml-30 scale-125">
             </div>
             <div class="w-full md:w-1/2 p-8 md:pr-12 text-center md:text-left">
                 <h2 class="font-medium text-4xl mb-2">Playstation 5</h2>
@@ -73,15 +70,19 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2">
-            <div class="flex flex-col items-center justify-center p-8 bg-gray-100 text-center">
-                <img src="img/AirpodsMax.png" alt="" class="mb-4 max-h-40 object-contain">
-                <h2 class="font-extralight text-3xl mb-2">Apple Airpods <span class="font-medium">Max</span></h2>
-                <p class="text-neutral-400 text-sm">Computational audio. Listen, it's powerful</p>
+            <div class="flex items-center justify-center h-80 gap-8 p-8 bg-gray-100 text-center">
+                <img src="img/AirpodsMax.png" alt="" class="mb-4 -ml-35 max-h-full object-contain">
+                <div class="flex flex-col text-start">
+                    <h2 class="font-extralight text-3xl mb-2">Apple Airpods <span class="font-medium">Max</span></h2>
+                    <p class="text-neutral-400 text-sm">Computational audio. Listen, it's powerful</p>
+                </div>
             </div>
-            <div class="flex flex-col items-center justify-center p-8 bg-neutral-800 text-white text-center">
-                <img src="img/VisionPro.png" alt="" class="mb-4 max-h-40 object-contain">
-                <h2 class="font-extralight text-3xl mb-2">Apple Vision <span class="font-medium">Pro</span></h2>
-                <p class="text-neutral-400 text-sm">An immersive way to experience entertainment</p>
+            <div class="flex items-center justify-center h-80 gap-8 p-8 bg-neutral-800 text-white text-center overflow-hidden">
+                <img src="img/VisionPro.png" alt="" class="mb-4 -ml-45 max-h-full object-contain -rotate-y-180">
+                <div class="flex flex-col text-start">
+                    <h2 class="font-extralight text-3xl mb-2">Apple Vision <span class="font-medium">Pro</span></h2>
+                    <p class="text-neutral-400 text-sm">An immersive way to experience entertainment</p>
+                </div>
             </div>
         </div>
     </div>
@@ -89,13 +90,9 @@
         <div class="flex flex-col gap-4 items-center md:items-start text-center md:text-left z-10">
             <h2 class="font-extralight text-5xl md:text-6xl">Macbook <span class="font-medium">Air</span></h2>
             <p class="text-neutral-400">The new 15‑inch MacBook Air makes room for more of what you love with a spacious Liquid Retina display.</p>
-            <button class="border border-black rounded py-3 px-8 w-full md:w-fit hover:bg-black hover:text-white transition-all">
-                Shop Now
-            </button>
+            <button class="border border-black rounded py-3 px-8 w-full md:w-fit hover:bg-black hover:text-white transition-all">Shop Now</button>
         </div>
-        <div class="mt-8 md:mt-0 md:ml-4 w-full">
-            <img src="img/MacBook.png" alt="" class="w-full h-auto object-contain">
-        </div>
+        <img src="img/MacBook.png" alt="" class="w-full h-full -mr-80">
     </div>
 </section>
 
@@ -228,25 +225,134 @@
                 </nav>
             </header>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                @for ($i = 0; $i < 8; $i++)
-                    <div class="bg-gray-100 flex flex-col gap-4 justify-center items-center py-6 px-4 rounded-xl">
-                        <header class="w-full flex justify-end">
-                            <button class="cursor-pointer">
-                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z" stroke="#919191" stroke-opacity="0.77" stroke-width="1.4"/>
-                                </svg>
-                            </button>
-                            
-                        </header>
-                        <img src="img/{{ $i+1 }}.png" alt="" class="h-40">
-                        <footer class="px-6 flex flex-col gap-4">
-                            <h3 class="text-center text-xl font-medium">Apple iPhone 14 Pro Max 128GB Deep Purple</h3>
-                            <p class="text-center text-3xl font-semibold">$900</p>
-                            <button class="bg-black text-white rounded-xl w-full py-4 cursor-pointer hover:bg-gray-300 hover:text-black">Buy Now</button>
-                        </footer>
+                <div class="bg-gray-100 flex flex-col gap-4 justify-center items-center py-6 px-4 rounded-xl">
+                    <header class="w-full flex justify-end">
+                        <button class="cursor-pointer">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z" stroke="#919191" stroke-opacity="0.77" stroke-width="1.4"/>
+                            </svg>
+                        </button>
                         
-                    </div>
-                @endfor
+                    </header>
+                    <img src="img/1.png" alt="" class="h-40">
+                    <footer class="px-6 flex flex-col gap-4">
+                        <h3 class="text-center text-xl font-medium">Apple iPhone 14 Pro Max 128GB Deep Purple</h3>
+                        <p class="text-center text-3xl font-semibold">$900</p>
+                        <button class="bg-black text-white rounded-xl w-full py-4 cursor-pointer hover:bg-gray-300 hover:text-black">Buy Now</button>
+                    </footer>
+                </div>
+                <div class="bg-gray-100 flex flex-col gap-4 justify-center items-center py-6 px-4 rounded-xl">
+                    <header class="w-full flex justify-end">
+                        <button class="cursor-pointer">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z" stroke="#919191" stroke-opacity="0.77" stroke-width="1.4"/>
+                            </svg>
+                        </button>
+                        
+                    </header>
+                    <img src="img/2.png" alt="" class="h-40">
+                    <footer class="px-6 flex flex-col gap-4">
+                        <h3 class="text-center text-xl font-medium">Blackmagic Pocket Cinema Camera 6k</h3>
+                        <p class="text-center text-3xl font-semibold">$2535</p>
+                        <button class="bg-black text-white rounded-xl w-full py-4 cursor-pointer hover:bg-gray-300 hover:text-black">Buy Now</button>
+                    </footer>
+                </div>
+                <div class="bg-gray-100 flex flex-col gap-4 justify-center items-center py-6 px-4 rounded-xl">
+                    <header class="w-full flex justify-end">
+                        <button class="cursor-pointer">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z" stroke="#919191" stroke-opacity="0.77" stroke-width="1.4"/>
+                            </svg>
+                        </button>
+                        
+                    </header>
+                    <img src="img/3.png" alt="" class="h-40">
+                    <footer class="px-6 flex flex-col gap-4">
+                        <h3 class="text-center text-xl font-medium">Apple Watch Series 9 GPS 41mm Starlight Aluminium </h3>
+                        <p class="text-center text-3xl font-semibold">$399</p>
+                        <button class="bg-black text-white rounded-xl w-full py-4 cursor-pointer hover:bg-gray-300 hover:text-black">Buy Now</button>
+                    </footer>
+                </div>
+                <div class="bg-gray-100 flex flex-col gap-4 justify-center items-center py-6 px-4 rounded-xl">
+                    <header class="w-full flex justify-end">
+                        <button class="cursor-pointer">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z" stroke="#919191" stroke-opacity="0.77" stroke-width="1.4"/>
+                            </svg>
+                        </button>
+                        
+                    </header>
+                    <img src="img/4.png" alt="" class="h-40">
+                    <footer class="px-6 flex flex-col gap-4">
+                        <h3 class="text-center text-xl font-medium">AirPods Max Silver Starlight Aluminium</h3>
+                        <p class="text-center text-3xl font-semibold">$549</p>
+                        <button class="bg-black text-white rounded-xl w-full py-4 cursor-pointer hover:bg-gray-300 hover:text-black">Buy Now</button>
+                    </footer>
+                </div>
+                <div class="bg-gray-100 flex flex-col gap-4 justify-center items-center py-6 px-4 rounded-xl">
+                    <header class="w-full flex justify-end">
+                        <button class="cursor-pointer">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z" stroke="#919191" stroke-opacity="0.77" stroke-width="1.4"/>
+                            </svg>
+                        </button>
+                        
+                    </header>
+                    <img src="img/5.png" alt="" class="h-40">
+                    <footer class="px-6 flex flex-col gap-4">
+                        <h3 class="text-center text-xl font-medium">Samsung Galaxy Watch6 Classic 47mm Black</h3>
+                        <p class="text-center text-3xl font-semibold">$369</p>
+                        <button class="bg-black text-white rounded-xl w-full py-4 cursor-pointer hover:bg-gray-300 hover:text-black">Buy Now</button>
+                    </footer>
+                </div>
+                <div class="bg-gray-100 flex flex-col gap-4 justify-center items-center py-6 px-4 rounded-xl">
+                    <header class="w-full flex justify-end">
+                        <button class="cursor-pointer">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z" stroke="#919191" stroke-opacity="0.77" stroke-width="1.4"/>
+                            </svg>
+                        </button>
+                        
+                    </header>
+                    <img src="img/6.png" alt="" class="h-40">
+                    <footer class="px-6 flex flex-col gap-4">
+                        <h3 class="text-center text-xl font-medium">Galaxy Z Fold5 Unlocked | 256GB | Phantom Black</h3>
+                        <p class="text-center text-3xl font-semibold">$1799</p>
+                        <button class="bg-black text-white rounded-xl w-full py-4 cursor-pointer hover:bg-gray-300 hover:text-black">Buy Now</button>
+                    </footer>
+                </div>
+                <div class="bg-gray-100 flex flex-col gap-4 justify-center items-center py-6 px-4 rounded-xl">
+                    <header class="w-full flex justify-end">
+                        <button class="cursor-pointer">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z" stroke="#919191" stroke-opacity="0.77" stroke-width="1.4"/>
+                            </svg>
+                        </button>
+                        
+                    </header>
+                    <img src="img/7.png" alt="" class="h-40">
+                    <footer class="px-6 flex flex-col gap-4">
+                        <h3 class="text-center text-xl font-medium">Galaxy Buds FE Graphite</h3>
+                        <p class="text-center text-3xl font-semibold">$99.99</p>
+                        <button class="bg-black text-white rounded-xl w-full py-4 cursor-pointer hover:bg-gray-300 hover:text-black">Buy Now</button>
+                    </footer>
+                </div>
+                <div class="bg-gray-100 flex flex-col gap-4 justify-center items-center py-6 px-4 rounded-xl">
+                    <header class="w-full flex justify-end">
+                        <button class="cursor-pointer">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z" stroke="#919191" stroke-opacity="0.77" stroke-width="1.4"/>
+                            </svg>
+                        </button>
+                        
+                    </header>
+                    <img src="img/8.png" alt="" class="h-40">
+                    <footer class="px-6 flex flex-col gap-4">
+                        <h3 class="text-center text-xl font-medium">Apple iPhone 14 Pro Max 128GB Deep Purple</h3>
+                        <p class="text-center text-3xl font-semibold">$900</p>
+                        <button class="bg-black text-white rounded-xl w-full py-4 cursor-pointer hover:bg-gray-300 hover:text-black">Buy Now</button>
+                    </footer>
+                </div>
             </div>
         </section>
 
@@ -305,7 +411,6 @@
     </main>
     <footer class="bg-black text-white">
         <div class="container mx-auto h-100 py-24">
-            cyber
         </div>
     </footer>
 </body>
