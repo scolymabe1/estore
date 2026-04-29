@@ -13,7 +13,6 @@
 </head>
 
 <body class="flex min-h-screen flex-col font-inter">
-    
     <header class="container mx-auto">
         <div class="grid grid-cols-[auto_auto] items-center gap-6 px-4 py-4 md:grid-cols-[auto_1fr_auto_auto]">
             <a href="." class="">
@@ -46,14 +45,13 @@
                     <i class="fa fa-user-o"></i>
                 </a>
             </div>
-            <div class="lg:hidden justify-end text-xl">
+            <div class="flex lg:hidden justify-end text-xl">
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
         </div>
     </header>
 
     <main class="grow">
-        
         <section class="flex min-h-[632px] items-center overflow-hidden bg-mauve-900 text-white">
             <div
                 class="container mx-auto flex min-h-[632px] flex-col items-center justify-between px-10 pt-20 md:flex-row md:px-0 md:pt-0"
@@ -84,10 +82,8 @@
             </div>
         </section>
 
-        
-        <section class="grid grid-cols-1 xl:grid-cols-2">
+        <section class="grid grid-cols-1 xl:grid-cols-2 pb-10">
             <div class="flex flex-col">
-                
                 <div class="flex min-h-80 flex-col items-center overflow-hidden bg-white md:flex-row">
                     <div class="flex w-full justify-center overflow-hidden md:w-1/2">
                         <img
@@ -107,7 +103,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2">
-                    
                     <div class="flex h-80 items-center justify-center gap-8 overflow-hidden bg-gray-100 p-8">
                         <img
                             src="img/AirpodsMax.png"
@@ -125,7 +120,6 @@
                         </div>
                     </div>
 
-                    
                     <div class="flex h-80 items-center justify-center gap-8 overflow-hidden bg-neutral-800 p-8 text-white">
                         <img
                             src="img/VisionPro.png"
@@ -145,7 +139,6 @@
                 </div>
             </div>
 
-            
             <div class="flex flex-col items-center overflow-hidden bg-gray-200 p-8 md:flex-row md:p-12">
                 <div
                     class="z-10 order-2 flex flex-col items-center gap-4 text-center md:order-1 md:items-start md:text-left"
@@ -169,13 +162,13 @@
                 <img
                     src="img/MacBook.png"
                     alt="MacBook Air"
-                    class="order-1 h-auto w-full object-contain md:order-2 md:-mr-[320px] md:w-[700px]"
+                    class="order-1 h-auto h-full object-contain md:order-2 md:-mr-[320px] md:w-[700px]"
                 />
             </div>
         </section>
 
         <section
-            class="container mx-auto flex flex-col gap-4 px-4 py-20"
+            class="container mx-auto flex flex-col gap-4 px-4 pb-10"
             x-data="{
                 categories: [
                     { icon: 'Phones.svg', title: 'Phones' },
@@ -214,9 +207,8 @@
             </div>
         </section>
 
-        
         <section
-            class="container mx-auto flex flex-col gap-8 px-4 py-20"
+            class="container mx-auto flex flex-col gap-8 px-4 pb-10"
             x-data="{
                 products: [
                     { name: 'Apple iPhone 14 Pro Max 128GB Deep Purple', price: 900, img: 'img/1.png' },
@@ -248,25 +240,27 @@
 
             <div class="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
                 <template x-for="product in products" :key="product.name">
-                    <article class="flex h-full min-w-0 flex-col items-center rounded-xl bg-gray-100 px-3 py-4 sm:px-4 sm:py-6">
+                    <article class="flex h-full min-w-0 flex-col gap-4 items-center rounded-xl bg-gray-100 px-3 py-4 sm:px-4 sm:py-6">
                         <header class="mb-2 flex w-full justify-end">
                             <button class="cursor-pointer text-xl text-neutral-400 hover:text-black sm:text-2xl">
                                 <i class="fa fa-heart-o"></i>
                             </button>
                         </header>
 
-                        <div class="mb-4 flex h-28 w-full items-center justify-center sm:h-40">
+                        <div class="mb-4 flex h-28 w-full shrink-0 items-center justify-center sm:h-40">
                             <img :src="product.img" :alt="product.name" class="max-h-full max-w-full object-contain" />
                         </div>
 
-                        <footer class="flex w-full grow flex-col justify-end gap-3 sm:gap-4">
-                            <h3
-                                class="line-clamp-3 min-h-[60px] w-full text-center text-sm font-medium leading-5 sm:min-h-[48px] sm:text-base"
-                                x-text="product.name"
-                            ></h3>
+                        <footer class="flex w-full grow flex-col gap-6">
+                            <div class="flex flex-col gap-4 h-full">
+                                <h3
+                                    class="line-clamp-3 grow text-center text-sm font-medium leading-5 sm:text-base sm:leading-6"
+                                    x-text="product.name"
+                                ></h3>
+                                <p class="text-center text-2xl font-semibold sm:text-2xl" x-text="'$' + product.price"></p>
 
-                            <p class="text-center text-xl font-semibold sm:text-2xl" x-text="'$' + product.price"></p>
-
+                            </div>
+                            
                             <button
                                 class="w-full cursor-pointer rounded-xl border bg-black py-3 text-sm text-white transition-all hover:bg-transparent hover:text-black sm:py-4 sm:text-base"
                             >
@@ -278,8 +272,7 @@
             </div>
         </section>
 
-        
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pb-10">
             <article class="flex h-full flex-col justify-between gap-4 px-8 py-14">
                 <div class="w-full">
                     <img src="img/11.png" alt="Popular Products" class="h-full w-full object-contain" />
@@ -349,9 +342,8 @@
             </article>
         </section>
 
-        
         <section
-            class="container mx-auto flex flex-col gap-8 px-4 py-20"
+            class="container mx-auto flex flex-col gap-8 px-4 pb-10"
             x-data="{
                 products: [
                     { name: 'Apple iPhone 14 Pro 512GB Gold MQ233', price: 1437, img: 'img/1.png' },
@@ -367,27 +359,29 @@
 
             <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
                 <template x-for="product in products" :key="product.name">
-                    <article class="flex flex-col items-center rounded-xl bg-gray-100 px-4 py-6">
+                    <article class="flex h-full min-w-0 flex-col gap-4 items-center rounded-xl bg-gray-100 px-3 py-4 sm:px-4 sm:py-6">
                         <header class="mb-2 flex w-full justify-end">
-                            <button class="cursor-pointer text-2xl text-neutral-400 hover:text-black">
+                            <button class="cursor-pointer text-xl text-neutral-400 hover:text-black sm:text-2xl">
                                 <i class="fa fa-heart-o"></i>
                             </button>
                         </header>
 
-                        <div class="mb-4 flex h-40 items-center">
-                            <img :src="product.img" :alt="product.name" class="h-full object-contain" />
+                        <div class="mb-4 flex h-28 w-full shrink-0 items-center justify-center sm:h-40">
+                            <img :src="product.img" :alt="product.name" class="max-h-full max-w-full object-contain" />
                         </div>
 
-                        <footer class="flex w-full flex-col gap-4">
-                            <h3
-                                class="flex h-12 items-center justify-center text-center text-base font-medium"
-                                x-text="product.name"
-                            ></h3>
+                        <footer class="flex w-full grow flex-col gap-6">
+                            <div class="flex flex-col gap-4 h-full">
+                                <h3
+                                    class="line-clamp-3 grow text-center text-sm font-medium leading-5 sm:text-base sm:leading-6"
+                                    x-text="product.name"
+                                ></h3>
+                                <p class="text-center text-2xl font-semibold sm:text-2xl" x-text="'$' + product.price"></p>
 
-                            <p class="text-center text-2xl font-semibold" x-text="'$' + product.price"></p>
-
+                            </div>
+                            
                             <button
-                                class="w-full cursor-pointer rounded-xl border bg-black py-4 text-white transition-all hover:bg-transparent hover:text-black"
+                                class="w-full cursor-pointer rounded-xl border bg-black py-3 text-sm text-white transition-all hover:bg-transparent hover:text-black sm:py-4 sm:text-base"
                             >
                                 Buy Now
                             </button>
@@ -397,7 +391,6 @@
             </div>
         </section>
 
-        
         <section
             class="flex h-128 w-full flex-col items-center justify-center gap-10 bg-[url('img/bg-mobile.png')] bg-cover bg-center px-4 text-center text-white md:h-112 md:bg-[url('img/bg.png')]"
         >
@@ -419,7 +412,6 @@
         </section>
     </main>
 
-    
     <footer class="bg-black text-white">
         <div class="container mx-auto grid grid-cols-1 justify-between gap-20 px-4 py-16 md:grid-cols-3 md:py-24">
             <div class="grid h-fit gap-4 text-center md:text-left">
