@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Cyber</title>
+
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script>
+</head>
+
+<body class="flex min-h-screen flex-col font-inter">
+    <header class="container mx-auto">
+        <div class="grid grid-cols-[auto_auto] items-center gap-12 px-4 py-4 md:grid-cols-[auto_1fr_auto_auto]">
+            <a href="." class="">
+                <img src="img/Logo_black.svg" alt=""/>
+            </a>
+
+            <form action="" class="hidden w-full max-w-md md:block">
+                <div class="relative">
+                    <i class="fa fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+                    <input type="text" class="w-full bg-gray-100 rounded-md p-4 pl-12 text-sm outline-none" placeholder="Search">
+                </div>
+                <!-- <input type="text" placeholder="Search" class="w-full rounded bg-gray-100 p-2" /> -->
+            </form>
+
+            <nav class="hidden lg:block">
+                <ul class="flex justify-center gap-12 text-gray-400">
+                    <li><a href="#" class="hover:text-neutral-600">Home</a></li>
+                    <li><a href="#" class="hover:text-neutral-600">About</a></li>
+                    <li><a href="#" class="hover:text-neutral-600">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-neutral-600">Blog</a></li>
+                </ul>
+            </nav>
+
+            <div class="hidden lg:flex w-fit justify-self-end gap-6 text-2xl">
+                <a href="#" class="hover:text-neutral-500">
+                    <i class="fa fa-heart-o"></i>
+                </a>
+
+                <a href="#" class="hover:text-neutral-500">
+                    <i class="fa fa-shopping-cart"></i>
+                </a>
+
+                <a href="#" class="hover:text-neutral-500">
+                    <i class="fa fa-user-o"></i>
+                </a>
+            </div>
+            <div class="flex lg:hidden justify-end text-xl">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="grow">
+
+        <section class="container mx-auto px-4 py-10 flex flex-col gap-4 text-black">
+            <ul class="flex text-gray-400">
+                <li class="after:content-['>'] after:mx-6 last:after:content-none last:text-black"><a href="." class="hover:text-black">Home</a></li>
+                <li class="after:content-['>'] after:mx-6 last:after:content-none last:text-black"><a href="catalog.html" class="hover:text-black">Catalog</a></li>
+                <li class="after:content-['>'] after:mx-6 last:after:content-none last:text-black"><a href="#" class="hover:text-black">Smartphones</a></li>
+                <li class="after:content-['>'] after:mx-6 last:after:content-none last:text-black"><a href="#" class="hover:text-black">Apple</a></li>
+                <li class="after:content-['>'] after:mx-6 last:after:content-none last:text-black"><a href="#" class="hover:text-black">iPhone 14 Pro Max</a></li>
+            </ul>
+        </section>
+        <section class="container mx-auto px-4 py-28 grid grid-cols-2 text-black">
+            <div class="grid grid-cols-[1fr_6fr] justify-center items-center max-w-[632px]">
+                <div class="flex flex-col gap-8">
+                    <img src="img/1.png" alt="" class="w-full">
+                    <img src="img/1.png" alt="" class="w-full">
+                    <img src="img/1.png" alt="" class="w-full">
+                    <img src="img/1.png" alt="" class="w-full">
+                </div>
+                <img src="img/1.png" alt="" class="w-full">
+            </div>
+            <div class="flex flex-col gap-8">
+                <div class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-6">
+                        <h2 class="font-bold text-4xl text-black">Apple iPhone 14 Pro Max</h2>
+                        <div class="flex gap-4 items-center">
+                            <h3 class="text-3xl">$1399</h3>
+                            <span class="text-2xl text-neutral-400 line-through">$1499</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-6">
+                        <div class="flex gap-6 items-center">
+                            <p class="text-base">Select color :</p>
+                            <div class="flex gap-2">
+                                <div class="w-8 h-8 rounded-full bg-black hover:opacity-80 hover:cursor-pointer"></div>
+                                <div class="w-8 h-8 rounded-full bg-violet-800 hover:opacity-80 hover:cursor-pointer"></div>
+                                <div class="w-8 h-8 rounded-full bg-red-600 hover:opacity-80 hover:cursor-pointer"></div>
+                                <div class="w-8 h-8 rounded-full bg-yellow-500 hover:opacity-80 hover:cursor-pointer"></div>
+                                <div class="w-8 h-8 rounded-full bg-gray-200 hover:opacity-80 hover:cursor-pointer"></div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-4 gap-4">
+                            <button class="flex justify-center items-center w-full h-fit py-4 px-6 border border-neutral-200 rounded-lg transition-all">
+                                <span class="font-medium text-[14px] leading-none text-neutral-200">128GB</span>
+                            </button>
+                            <button class="group flex justify-center items-center w-full h-fit py-4 px-6 border border-neutral-400 hover:border-neutral-500 rounded-lg hover:cursor-pointer transition-all">
+                                <span class="font-medium text-[14px] leading-none text-neutral-400 group-hover:text-neutral-500 transition-all">256GB</span>
+                            </button>
+                            <button class="group flex justify-center items-center w-full h-fit py-4 px-6 border border-neutral-400 hover:border-neutral-500 rounded-lg hover:cursor-pointer transition-all">
+                                <span class="font-medium text-[14px] leading-none text-neutral-400 group-hover:text-neutral-500 transition-all">512GB</span>
+                            </button>
+                            <button class="flex justify-center items-center w-full h-fit py-4 px-6 border rounded-lg hover:cursor-pointer">
+                                <span class="font-medium text-[14px] leading-none">1TB</span>
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-2 xl:grid-cols-3 gap-4"
+                        x-data="{
+                            specs: [
+                                {title: 'Screen size', value: '6.7', icon: 'fa-mobile'},
+                                {title: 'CPU', value: 'Apple A16 Bionic', icon: 'fa-microchip'},
+                                {title: 'Number of Cores', value: '6', icon: 'fa-code-fork'},
+                                {title: 'Main camera', value: '48-12 -12 MP', icon: 'fa-camera'},
+                                {title: 'Front-camera', value: '12 MP', icon: 'fa-camera-retro'},
+                                {title: 'Battery capacity', value: '4323 mAh', icon: 'fa-battery-full'},
+                            ]
+                        }">
+                            <template x-for="spec in specs" :key="spec.title">
+                                <div class="flex items-center gap-2 py-4 px-2 w-full h-fit bg-neutral-100 rounded-md">
+                                    <div class="flex justify-center items-center w-6 h-6 text-2xl text-neutral-600 leading-none">
+                                        <i class="fa" :class="spec.icon" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="flex flex-col gap-1 leading-none">
+                                        <p class="text-[14px] text-neutral-400" x-text="spec.title"></p>
+                                        <span class="text-[14px] text-neutral-600" x-text="spec.value"></span>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                        <p class="text-[14px] leading-6 text-neutral-400">Enhanced capabilities thanks toan enlarged display of 6.7 inchesand work without rechargingthroughout the day. Incredible photosas in weak, yesand in bright lightusing the new systemwith two cameras <span class="text-black underline hover:text-neutral-600 hover:cursor-pointer">more...</span></p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <button class="w-full py-4 px-14 cursor-pointer rounded-md border transition-all bg-white hover:bg-black hover:text-white">
+                        Add to Wishlist
+                    </button>
+                    <button class="w-full py-4 px-14 cursor-pointer rounded-md border transition-all bg-black hover:bg-white text-white hover:text-black">
+                        Add to Cart
+                    </button>
+                </div>
+                <div class="flex justify-between gap-8">
+                    <div class="flex flex-col lg:flex-row items-center gap-4 h-fit">
+                        <div class="flex justify-center items-center p-4 text-xl text-neutral-400 leading-none bg-neutral-100 rounded-md">
+                            <div class="flex justify-center items-center w-6 h-6">
+                                <i class="fa fa-globe" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 leading-none text-center lg:text-start">
+                            <p class="text-medium text-[14px] text-neutral-400">Free Delivery</p>
+                            <span class="text-medium text-[14px] text-neutral-600">1-2 day</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col lg:flex-row items-center gap-4 h-fit">
+                        <div class="flex justify-center items-center p-4 text-xl text-neutral-400 leading-none bg-neutral-100 rounded-md">
+                            <div class="flex justify-center items-center w-6 h-6">
+                                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 leading-none text-center lg:text-start">
+                            <p class="text-medium text-[14px] text-neutral-400">In Stock</p>
+                            <span class="text-medium text-[14px] text-neutral-600">Today</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col lg:flex-row items-center gap-4 h-fit">
+                        <div class="flex justify-center items-center p-4 text-xl text-neutral-400 leading-none bg-neutral-100 rounded-md">
+                            <div class="flex justify-center items-center w-6 h-6">
+                                <i class="fa fa-xing" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 leading-none text-center lg:text-start">
+                            <p class="text-medium text-[14px] text-neutral-400">Guaranteed</p>
+                            <span class="text-medium text-[14px] text-neutral-600">1 year</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="bg-black text-white">
+        <div class="container mx-auto grid grid-cols-1 justify-between gap-20 px-4 py-16 md:grid-cols-3 md:py-24">
+            <div class="grid h-fit gap-4 text-center md:text-left">
+                <img src="img/Logo.svg" alt="Cyber logo" class="mx-auto md:mx-0" />
+
+                <p class="text-sm text-neutral-400">
+                    We are a residential interior design firm located in Portland. Our boutique-studio offers more than
+                </p>
+            </div>
+
+            <div class="grid gap-4 text-center md:gap-2 md:text-left">
+                <h2 class="text-base">Services</h2>
+
+                <ul class="grid gap-4 text-sm text-neutral-400 md:gap-2">
+                    <li><a href="#" class="hover:text-neutral-500">Bonus Program</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Gift cards</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Debit and payment</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Service contracts</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Non-cash account</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Payment</a></li>
+                </ul>
+            </div>
+
+            <div class="grid gap-4 text-center md:gap-2 md:text-left">
+                <h2 class="text-base">Assistance to the buyer</h2>
+
+                <ul class="grid gap-4 text-sm text-neutral-400 md:gap-2">
+                    <li><a href="#" class="hover:text-neutral-500">Find an order</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Terms of delivery</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Exchange and return of goods</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Guarantee</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Frequently asked questions</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Terms of use of the site</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

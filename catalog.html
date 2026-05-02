@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Cyber</title>
+
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+    <script defer src="https://unpkg.com/@alpinejs/collapse@latest/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script>
+</head>
+
+<body class="flex min-h-screen flex-col font-inter">
+    <header class="container mx-auto">
+        <div class="grid grid-cols-[auto_auto] items-center gap-12 px-4 py-4 md:grid-cols-[auto_1fr_auto_auto]">
+            <a href="." class="">
+                <img src="img/Logo_black.svg" alt=""/>
+            </a>
+
+            <form action="" class="hidden w-full max-w-md md:block">
+                <div class="relative">
+                    <i class="fa fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+                    <input type="text" class="w-full bg-gray-100 rounded-md p-4 pl-12 text-sm outline-none" placeholder="Search">
+                </div>
+                <!-- <input type="text" placeholder="Search" class="w-full rounded bg-gray-100 p-2" /> -->
+            </form>
+
+            <nav class="hidden lg:block">
+                <ul class="flex justify-center gap-12 text-gray-400">
+                    <li><a href="#" class="hover:text-neutral-600">Home</a></li>
+                    <li><a href="#" class="hover:text-neutral-600">About</a></li>
+                    <li><a href="#" class="hover:text-neutral-600">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-neutral-600">Blog</a></li>
+                </ul>
+            </nav>
+
+            <div class="hidden lg:flex w-fit justify-self-end gap-6 text-2xl">
+                <a href="#" class="hover:text-neutral-500">
+                    <i class="fa fa-heart-o"></i>
+                </a>
+
+                <a href="#" class="hover:text-neutral-500">
+                    <i class="fa fa-shopping-cart"></i>
+                </a>
+
+                <a href="#" class="hover:text-neutral-500">
+                    <i class="fa fa-user-o"></i>
+                </a>
+            </div>
+            <div class="flex lg:hidden justify-end text-xl">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="grow">
+        <section class="container mx-auto px-4 py-10 flex flex-col gap-4 text-black">
+            <ul class="flex text-gray-400">
+                <li class="after:content-['>'] after:mx-6 last:after:content-none last:text-black"><a href="." class="hover:text-black">Home</a></li>
+                <li class="after:content-['>'] after:mx-6 last:after:content-none last:text-black"><a href="catalog.html" class="hover:text-black">Catalog</a></li>
+                <li class="after:content-['>'] after:mx-6 last:after:content-none last:text-black"><a href="#" class="hover:text-black">Smartphones</a></li>
+            </ul>
+        </section>
+        <section class="container mx-auto px-4 py-10 grid lg:grid-cols-[256px_1fr] gap-8 text-black">
+            <aside class="hidden lg:flex flex-col gap-6"
+            x-data="{ 
+                filters: [
+                    { 
+                        title: 'Brand', 
+                        search: true, 
+                        items: [
+                            {name: 'Apple', count: 110}, 
+                            {name: 'Samsung', count: 125}, 
+                            {name: 'Xiaomi', count: 68}
+                        ] 
+                    },
+                    { title: 'Battery capacity', search: false, items: [] },
+                    { title: 'Screen type', search: false, items: [] },
+                    { title: 'Screen diagonal', search: false, items: [] },
+                    { title: 'Protection class', search: false, items: [] },
+                    { title: 'Built-in memory', search: false, items: [] }
+                ] 
+            }">
+                <template x-for="(filter, index) in filters" :key="filter.title">
+                    <details :open="index === 0" class="group border-b border-transparent last:border-none">
+                        <summary class="flex flex-col cursor-pointer list-none font-semibold">
+                            <div class="flex justify-between py-3 items-center">
+                                <span x-text="filter.title"></span>
+                                <span class="flex items-center justify-center w-5 h-5 transition-transform duration-100 group-open:rotate-180">
+                                    <i class="fa fa-angle-down text-gray-500"></i>
+                                </span>
+                            </div>
+                            <hr class="border-gray-300">
+                        </summary>
+                        <div class="flex flex-col gap-4 py-4"> 
+                            <!-- Поиск -->
+                            <template x-if="filter.search">
+                                <div class="relative">
+                                    <i class="fa fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+                                    <input type="text" class="w-full bg-gray-100 rounded-md py-2 pl-10 text-sm outline-none" placeholder="Search">
+                                </div>
+                            </template>
+
+                            <!-- Список -->
+                            <div class="flex flex-col gap-2 max-h-60 overflow-y-auto pr-2">
+                                <template x-for="item in filter.items">
+                                    <label class="flex items-center gap-2 cursor-pointer">
+                                        <input type="checkbox" class="accent-black w-4 h-4">
+                                        <span x-text="item.name" class="text-[15px] font-medium"></span>
+                                        <span x-text="item.count" class="text-[12px] text-gray-400"></span>
+                                    </label>
+                                </template>
+                            </div>
+                        </div>
+                    </details>
+                </template>
+            </aside>
+            <div class="flex flex-col gap-6">
+                <div class="flex flex-col lg:flex-row gap-y-4 justify-between lg:items-center">
+                    <p class="text-base text-gray-400 font-medium flex items-center gap-2 order-2 lg:order-1">Selected Products: <span class="text-xl font-medium text-black">85</span></p>
+                    <div class="grid grid-cols-2 lg:flex gap-4 order-1 lg:order-2">
+                        <button class="lg:hidden px-4 py-2 min-w-20 md:min-w-60 rounded-md border border-gray-200 outline-none text-start">
+                            Filters
+                        </button>
+                        <select class="px-4 py-2 min-w-20 md:min-w-60 rounded-md border border-gray-200 outline-none text-start">
+                            <option value="">By rating</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+                x-data="{
+                    products: [
+                        { name: 'Apple iPhone 14 Pro Max 128GB Deep Purple', price: 900, img: 'img/1.png', url: 'product.html' },
+                        { name: 'Blackmagic Pocket Cinema Camera 6k', price: 2535, img: 'img/2.png', url: 'product.html' },
+                        { name: 'Apple Watch Series 9 GPS 41mm Starlight Aluminium', price: 399, img: 'img/3.png', url: 'product.html' },
+                        { name: 'AirPods Max Silver Starlight Aluminium', price: 549, img: 'img/4.png', url: 'product.html' },
+                        { name: 'Samsung Galaxy Watch6 Classic 47mm Black', price: 369, img: 'img/5.png', url: 'product.html' },
+                        { name: 'Galaxy Z Fold5 Unlocked | 256GB | Phantom Black', price: 1799, img: 'img/6.png', url: 'product.html' },
+                        { name: 'Galaxy Buds FE Graphite', price: 99.99, img: 'img/7.png', url: 'product.html' },
+                        { name: 'Apple iPad 9 10.2 64GB Wi-Fi Silver 2021', price: 398, img: 'img/8.png', url: 'product.html' }
+                    ]
+                }">
+                    <template x-for="product in products" :key="product.name">
+                        <article class="flex h-full min-w-0 flex-col gap-4 items-center rounded-xl bg-gray-100 px-3 py-4 sm:px-4 sm:py-6">
+                            <header class="mb-2 flex w-full justify-end">
+                                <button class="cursor-pointer text-xl text-neutral-400 hover:text-black sm:text-2xl">
+                                    <i class="fa fa-heart-o"></i>
+                                </button>
+                            </header>
+
+                            <div class="mb-4 flex h-28 w-full shrink-0 items-center justify-center sm:h-40">
+                                <img :src="product.img" :alt="product.name" class="max-h-full max-w-full object-contain" />
+                            </div>
+
+                            <footer class="flex w-full grow flex-col gap-6">
+                                <div class="flex flex-col gap-4 h-full">
+                                    <h3 class="line-clamp-2 grow text-center text-sm font-medium leading-5 sm:text-base sm:leading-6"
+                                        x-text="product.name">
+                                    </h3>
+                                    <p class="text-center text-2xl font-semibold sm:text-2xl" x-text="'$' + product.price"></p>
+                                </div>
+                                
+                                <a
+                                    :href="product.url"
+                                    class="flex justify-center items-center w-full cursor-pointer rounded-xl border bg-black py-3 text-sm text-white transition-all hover:bg-transparent hover:text-black sm:py-4 sm:text-base"
+                                >
+                                    Buy Now
+                                </a>
+                            </footer>
+                        </article>
+                        
+                    </template>
+
+                </div>
+                <div class="mt-10 flex justify-center items-end gap-2 text-base">
+                    <a href="#" class="flex h-10 w-10 items-center justify-center rounded-md bg-gray-100 hover:bg-gray-200 hover:cursor-pointer"><i class="fa fa-angle-left"></i></a>
+                    <a href="#" class="flex h-10 w-10 items-center justify-center rounded-md bg-black hover:cursor-pointer text-white">1</a>
+                    <a href="#" class="flex h-10 w-10 items-center justify-center rounded-md bg-gray-100 hover:bg-gray-200 hover:cursor-pointer text-black">2</a>
+                    <a href="#" class="flex h-10 w-10 items-center justify-center rounded-md bg-gray-100 hover:bg-gray-200 hover:cursor-pointer text-black">3</a>
+                    <span class="text-gray-400">....</span>
+                    <a href="#" class="flex h-10 w-10 items-center justify-center rounded-md bg-gray-100 hover:bg-gray-200 hover:cursor-pointer text-black">12</a>
+                    <a href="#" class="flex h-10 w-10 items-center justify-center rounded-md bg-gray-100 hover:bg-gray-200 hover:cursor-pointer"><i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-white">
+        <div class="container mx-auto grid grid-cols-1 justify-between gap-20 px-4 py-16 md:grid-cols-3 md:py-24">
+            <div class="grid h-fit gap-4 text-center md:text-left">
+                <img src="img/Logo.svg" alt="Cyber logo" class="mx-auto md:mx-0" />
+
+                <p class="text-sm text-neutral-400">
+                    We are a residential interior design firm located in Portland. Our boutique-studio offers more than
+                </p>
+            </div>
+
+            <div class="grid gap-4 text-center md:gap-2 md:text-left">
+                <h2 class="text-base">Services</h2>
+
+                <ul class="grid gap-4 text-sm text-neutral-400 md:gap-2">
+                    <li><a href="#" class="hover:text-neutral-500">Bonus Program</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Gift cards</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Debit and payment</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Service contracts</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Non-cash account</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Payment</a></li>
+                </ul>
+            </div>
+
+            <div class="grid gap-4 text-center md:gap-2 md:text-left">
+                <h2 class="text-base">Assistance to the buyer</h2>
+
+                <ul class="grid gap-4 text-sm text-neutral-400 md:gap-2">
+                    <li><a href="#" class="hover:text-neutral-500">Find an order</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Terms of delivery</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Exchange and return of goods</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Guarantee</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Frequently asked questions</a></li>
+                    <li><a href="#" class="hover:text-neutral-500">Terms of use of the site</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
