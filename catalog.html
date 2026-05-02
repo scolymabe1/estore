@@ -132,21 +132,21 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
                 x-data="{
                     products: [
-                        { name: 'Apple iPhone 14 Pro Max 128GB Deep Purple', price: 900, img: 'img/1.png', url: 'product.html' },
-                        { name: 'Blackmagic Pocket Cinema Camera 6k', price: 2535, img: 'img/2.png', url: 'product.html' },
-                        { name: 'Apple Watch Series 9 GPS 41mm Starlight Aluminium', price: 399, img: 'img/3.png', url: 'product.html' },
-                        { name: 'AirPods Max Silver Starlight Aluminium', price: 549, img: 'img/4.png', url: 'product.html' },
-                        { name: 'Samsung Galaxy Watch6 Classic 47mm Black', price: 369, img: 'img/5.png', url: 'product.html' },
-                        { name: 'Galaxy Z Fold5 Unlocked | 256GB | Phantom Black', price: 1799, img: 'img/6.png', url: 'product.html' },
-                        { name: 'Galaxy Buds FE Graphite', price: 99.99, img: 'img/7.png', url: 'product.html' },
-                        { name: 'Apple iPad 9 10.2 64GB Wi-Fi Silver 2021', price: 398, img: 'img/8.png', url: 'product.html' }
+                        { name: 'Apple iPhone 14 Pro Max 128GB Deep Purple', price: 900, img: 'img/1.png', url: 'product.html', liked: false },
+                        { name: 'Blackmagic Pocket Cinema Camera 6k', price: 2535, img: 'img/2.png', url: 'product.html', liked: false },
+                        { name: 'Apple Watch Series 9 GPS 41mm Starlight Aluminium', price: 399, img: 'img/3.png', url: 'product.html', liked: false },
+                        { name: 'AirPods Max Silver Starlight Aluminium', price: 549, img: 'img/4.png', url: 'product.html', liked: false },
+                        { name: 'Samsung Galaxy Watch6 Classic 47mm Black', price: 369, img: 'img/5.png', url: 'product.html', liked: false },
+                        { name: 'Galaxy Z Fold5 Unlocked | 256GB | Phantom Black', price: 1799, img: 'img/6.png', url: 'product.html', liked: false },
+                        { name: 'Galaxy Buds FE Graphite', price: 99.99, img: 'img/7.png', url: 'product.html', liked: false },
+                        { name: 'Apple iPad 9 10.2 64GB Wi-Fi Silver 2021', price: 398, img: 'img/8.png', url: 'product.html', liked: false }
                     ]
                 }">
                     <template x-for="product in products" :key="product.name">
                         <article class="flex h-full min-w-0 flex-col gap-4 items-center rounded-xl bg-gray-100 px-3 py-4 sm:px-4 sm:py-6">
                             <header class="mb-2 flex w-full justify-end">
-                                <button class="cursor-pointer text-xl text-neutral-400 hover:text-black sm:text-2xl">
-                                    <i class="fa fa-heart-o"></i>
+                                <button @click="product.liked = !product.liked" class="cursor-pointer text-xl sm:text-2xl" :class="product.liked ? 'text-red-500' : 'text-neutral-400 hover:text-black'">
+                                    <i :class="product.liked ? 'fa fa-heart' : 'fa fa-heart-o'"></i>
                                 </button>
                             </header>
 
